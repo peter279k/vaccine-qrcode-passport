@@ -8,9 +8,10 @@ export function vaccineRegisterSubmit(requestPayload, setVisibleText, setVisible
     setVisibleText('visible');
 
     Axios.post(process.env.REACT_APP_API_ADDRESS + vaccineRegisterUrl, requestPayload).then((response) => {
-        setResponseText(response.data);
+        setResponseText(response.data.result);
         setVisibleProgressBarText('invisible');
     }).catch((error) => {
+        console.log(error);
         let errResponseMessage = error.response.message;
         setErrorResponseText(errResponseMessage);
         setVisibleText('visible');

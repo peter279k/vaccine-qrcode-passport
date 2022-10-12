@@ -21,7 +21,7 @@
     "utf8": "^3.0.0",
     "uuid": "^8.3.2"
   },
-  "homepage": "http://peter279k.github.io/vaccine-qrcode-passport",
+  "homepage": ".",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

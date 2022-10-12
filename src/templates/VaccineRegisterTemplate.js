@@ -51,7 +51,16 @@ const VaccineRegisterTemplate = () => {
         return false;
       }
 
-      let encodedJsonString = base64.encode(utf8.encode(JSON.stringify(doseInputList)));
+      let mappedDoseInputList = doseInputList.map((arrList) => {
+        let year = arrList['vaccinateDate'].getFullYear();
+        let month = arrList['vaccinateDate'].getMonth() + 1;
+        let date = arrList['vaccinateDate'].getDate();
+        arrList['vaccinateDateStr'] = year + '-' + month + '-' + date;
+
+        return arrList;
+      });
+
+      let encodedJsonString = base64.encode(utf8.encode(JSON.stringify(mappedDoseInputList.slice())));
 
       let form = {
         'vaccinePersonName': vaccinePersonName,
@@ -59,15 +68,15 @@ const VaccineRegisterTemplate = () => {
         'doseInputList': encodedJsonString,
       };
 
-      if (!vaccinePersonEnFirstName || vaccinePersonEnFirstName === '') {
+      if (!!vaccinePersonEnFirstName && vaccinePersonEnFirstName !== '') {
         form['vaccinePersonEnFirstName'] = vaccinePersonEnFirstName;
       }
 
-      if (!vaccinePersonEnLastName || vaccinePersonEnLastName === '') {
+      if (!!vaccinePersonEnLastName && vaccinePersonEnLastName !== '') {
         form['vaccinePersonEnLastName'] = vaccinePersonEnLastName;
       }
 
-      if (!countryName || countryName === '') {
+      if (!!countryName && countryName !== '') {
         form['countryName'] = countryName;
       }
 
