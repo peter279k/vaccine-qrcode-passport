@@ -3,7 +3,6 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "@ideasio/add-to-homescreen-react": "^1.0.7",
     "axios": "^0.22.0",
     "base-64": "^1.0.0",
     "bootstrap": "^4.6.0",
