@@ -30,8 +30,6 @@ import DropDownQueryImmunizationObservationTemplate from './templates/DropDown/D
 import FHIRServerButtonTemplate from './templates/FHIRServerButtonTemplate.js';
 import VaccineRegisterButtonTemplate from './templates/VaccineRegisterButtonTemplate.js';
 
-import AddToHomeScreen from '@ideasio/add-to-homescreen-react';
-
 import './App.css';
 import './modifiedStyling.scss';
 
@@ -91,57 +89,7 @@ const App = () => {
       <Switch>
         <Route path="/">
         {
-          (
-            navigator.userAgent.toLocaleLowerCase().includes('iphone') === false &&
-            navigator.userAgent.toLocaleLowerCase().includes('chrome') === true
-          ) ?
-          <AddToHomeScreen
-            appId='Vaccine QRCode Passport'
-            startAutomatically={ true }
-            startDelay={ 0 }
-            lifespan={ 30 }
-            skipFirstVisit={ true }
-            displayPace={ 0 }
-            customPromptContent={ {
-              title: '要將此應用加到桌面嘛？',
-              cancelMsg: '',
-              installMsg: '安裝',
-              guidanceCancelMsg: '',
-              src: 'ic_launcher96.png',
-            } }
-            customPromptElements={ {
-              container: 'athContainer',
-              containerAddOns: '',
-              banner: 'athBanner',
-              logoCell: 'athLogoCell',
-              logoCellAddOns: 'athContentCell',
-              logo: 'athLogo',
-              titleCell: 'athTitleCell',
-              titleCellAddOns: 'athContentCell',
-              title: 'athTitle',
-              cancelButtonCell: 'athCancelButtonCell',
-              cancelButtonCellAddOns: 'athButtonCell',
-              cancelButton: 'athCancelButton',
-              installButtonCell: 'athInstallButtonCell',
-              installButtonCellAddOns: 'athButtonCell',
-              installButton: 'athInstallButton',
-              installButtonAddOns: 'button',
-              guidance: 'athGuidance',
-              guidanceImageCell: 'athGuidanceImageCell',
-              guidanceImageCellAddOns: '',
-              guidanceCancelButton: 'athGuidanceCancelButton'
-            } }
-            customPromptPlatformDependencies={ {
-              firefox: {
-                images: [
-                  {
-                    src: 'firefox-example.png',
-                    alt: 'Guide to install application on home screen.'
-                  }
-                ]
-              },
-            } }
-        /> : ''
+          ''
         }
         </Route>
       </Switch>
