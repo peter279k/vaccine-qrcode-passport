@@ -20,7 +20,7 @@
     "utf8": "^3.0.0",
     "uuid": "^8.3.2"
   },
-  "homepage": ".",
+  "homepage": "/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
